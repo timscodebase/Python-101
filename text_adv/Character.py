@@ -5,10 +5,11 @@ green = fg.green
 
 
 class Character:
-  def __init__(self, name, description, hp=10, attack=5, defense=5, level=1, is_dead=False):
+  def __init__(self, name, description, hp, mp, attack, defense, level, is_dead=False):
     self.name = name
     self.description = description
-    self.hp
+    self.hp = hp
+    self.mp = mp
     self.attack = attack
     self.defense = defense
     self.level = level
