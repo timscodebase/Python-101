@@ -1,4 +1,4 @@
-from Character import Character
+from classes.Character import Character
 
 class Cleric(Character):
   def __init__(self, name):

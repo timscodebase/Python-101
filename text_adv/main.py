@@ -1,7 +1,7 @@
 import os
 from art import *
 from Colors import *
-from utils import create_character
+from utils import create_character, greet
 
 
 TITLE = text2art('''
@@ -21,21 +21,26 @@ my_character = None
 character = input('Choice your character type:\na) Wizard\nb) Warrior\nc) Cleric\nd) Thief\n\n')
 while character not in ['a', 'A', 'b', 'B', 'c', 'C', 'd', 'D']:
   character = input(red |'Invalid character type. Please choice your character type:\na) Wizard\nb) Warrior\nc) Cleric\nd) Thief\n\n')
+
 if character == 'a' or character == 'A':
   print(green | 'You are a Wizard')
   my_character = create_character('Wizard')
-  my_character.fireball()
+  greet(my_character.name, my_character.description)
+
 elif character == 'b' or character == 'B':
   print(blue | 'You are a Warrior')
   my_character = create_character('Warrior')
-  my_character.jab()
+  greet(my_character.name, my_character.description)
+
 elif character == 'c' or character == 'C':
   print(pink | 'You are a Cleric')
-  my_character = create_character('Cleric')
-  my_character.heal()
+  my_character = create_character('Cleric') 
+  greet(my_character.name, my_character.description)
+
 elif character == 'd' or character == 'D':
   print(teal | 'You are a Thief')
   my_character = create_character('Thief')
-  my_character.steal()
+  greet(my_character.name, my_character.description)
+
 else:
   print(red | 'Invalid character type')
